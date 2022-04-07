@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dragable.js</title>
+	<style>
+		body {
+	    height: 100vh;
+	    background-color: #0000ff;
+	    color: #dddddd;
+	    font-size: 16px;
+	    margin: 0px;
+	    padding: 0px;
+	    display: border-box;
+	}
+	#cancel {position: fixed; top:5px; left: 50%;transform:translateX(-50%);z-index: 1;}
+	.container {
+	    height: 100%;
+	    width: 100%;
+	    display: flex;
+	    align-items: center;
+	    justify-content: center;
+	}
+
+	.move {
+	    width: 150px;
+	    height: 50px;
+	    background-color: #ff00ff;
+	    border: 2px double #aaffee;
+		color: black;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	</style>
+</head>
+<body>
+	<button id="cancel" onclick="dragToggle()">Click to toggle drag&drop</button>
+
+    <div class="container">
+    	<div id="obj" class="move"><span>Hello world!</span></div>
+    </div>
+
+
+	<script src="draggable.js"></script>
+	<script>
+		var obj = new Draggable('obj');
+		console.log(obj);
+
+		function dragToggle() {
+			obj.dragToggle();
+		}
+	</script>
+</body>
+</html>
